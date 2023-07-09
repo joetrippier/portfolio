@@ -1,8 +1,8 @@
 {
-  "name": "my-gatsby-site",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "my-gatsby-site",
+  "description": "portfolio",
   "author": "Joe Trippier",
   "keywords": [
     "gatsby"
