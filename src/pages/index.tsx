@@ -40,6 +40,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <input type="text" maxLength={100}/>
             <label>Message</label>
             <input type="text" maxLength={500}/>
+            <button>Submit</button>
           </form>
         </section>
       </main>
