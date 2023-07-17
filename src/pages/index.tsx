@@ -18,9 +18,30 @@ const IndexPage: React.FC<PageProps> = () => {
           <p>Fullstack software engineer based in the North West UK</p>
         </section>
 
-        <h1>About</h1>
-        <h1>Links</h1>
-        <h1>Contact</h1>
+        <section className="w-screen flex flex-col justify-center items-center">
+          <h1>About</h1>
+          <p>Lorem ipsum</p>
+        </section>
+
+        <section className="w-screen flex flex-col justify-center items-center">
+          <h1>Links</h1>
+          <a href="https://github.com/joetrippier">Github</a>
+          <a href="https://codepen.io/tripex99">CodePen</a>
+        </section>
+
+        <section className="w-screen flex flex-col justify-center items-center">
+          <h1>Contact</h1>
+          <form>
+            <label>Name</label>
+            <input type="text" maxLength={100}/>
+            <label>Email</label>
+            <input type="email"/>
+            <label>Subject</label>
+            <input type="text" maxLength={100}/>
+            <label>Message</label>
+            <input type="text" maxLength={500}/>
+          </form>
+        </section>
       </main>
       <Footer></Footer>
     </>
