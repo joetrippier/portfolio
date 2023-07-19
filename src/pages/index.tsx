@@ -51,4 +51,13 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => {
+  return (
+    <>
+      <html lang="en" />
+      <body className="text-gray-100 bg-gray-900 font-serif" />
+      <title>Hello World</title>
+    </>
+  )
+}
+
