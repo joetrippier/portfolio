@@ -3,6 +3,8 @@ import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import logo from "../images/logo.png";
+import Button from "../components/button";
+import FormInput from "../components/formInput";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -14,33 +16,45 @@ const IndexPage: React.FC<PageProps> = () => {
             className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
             src={logo}
           />
-          <h1>Joe Trippier</h1>
+          <h1 className="text-4xl">Joe Trippier</h1>
           <p>Fullstack software engineer based in the North West UK</p>
         </section>
 
-        <section className="w-screen flex flex-col justify-center items-center">
-          <h1>About</h1>
+        <section className="w-screen flex flex-col justify-center items-center mb-8">
+          <h1 className="text-4xl">About</h1>
           <p>Lorem ipsum</p>
         </section>
 
-        <section className="w-screen flex flex-col justify-center items-center">
-          <h1>Links</h1>
-          <a href="https://github.com/joetrippier">Github</a>
-          <a href="https://codepen.io/tripex99">CodePen</a>
+        <section className="w-screen flex flex-col justify-center items-center mb-8">
+          <h1 className="text-4xl">Links</h1>
+          <a className="underline" href="https://github.com/joetrippier">Github</a>
+          <a className="underline" href="https://codepen.io/tripex99">CodePen</a>
         </section>
 
-        <section className="w-screen flex flex-col justify-center items-center">
-          <h1>Contact</h1>
-          <form>
-            <label>Name</label>
-            <input type="text" maxLength={100}/>
-            <label>Email</label>
-            <input type="email"/>
-            <label>Subject</label>
-            <input type="text" maxLength={100}/>
-            <label>Message</label>
-            <input type="text" maxLength={500}/>
-            <button>Submit</button>
+        <section className="w-screen flex flex-col justify-center items-center mb-8">
+          <h1 className="text-4xl m-1">Contact</h1>
+          <p className="m-1">If you want to get in touch about building something or just to say hi then drop me a message.</p>
+          <form className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96">
+            <FormInput>
+              <label>Name</label>
+              <input type="text" maxLength={100} />
+            </FormInput>
+            <FormInput>
+              <label>Email</label>
+              <input type="email" />
+            </FormInput>
+            <FormInput>
+              <label>Subject</label>
+              <input type="text" maxLength={100} />
+            </FormInput>
+            <FormInput>
+              <label>Message</label>
+              <input type="text" maxLength={500} />
+            </FormInput>
+
+            <FormInput>
+              <Button text="Submit"></Button>
+            </FormInput>
           </form>
         </section>
       </main>
