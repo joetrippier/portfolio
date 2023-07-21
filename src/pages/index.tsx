@@ -3,15 +3,18 @@ import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import logo from "../images/logo.png";
+import background from "../images/background.png";
 import Button from "../components/button";
 import FormInput from "../components/formInput";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
+
       <Header></Header>
       <main className="">
-        <section className="w-screen h-screen flex flex-col justify-center items-center">
+        <img src={background} className="w-screen h-screen absolute -z-50"></img>
+        <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
           <img
             className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
             src={logo}
@@ -21,19 +24,26 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
 
         <section className="w-screen flex flex-col justify-center items-center mb-8">
-          <h1 className="text-4xl">About</h1>
+          <h1 className="text-4xl mb-3">About</h1>
           <p>Lorem ipsum</p>
         </section>
 
         <section className="w-screen flex flex-col justify-center items-center mb-8">
-          <h1 className="text-4xl">Links</h1>
-          <a className="underline" href="https://github.com/joetrippier">Github</a>
-          <a className="underline" href="https://codepen.io/tripex99">CodePen</a>
+          <h1 className="text-4xl mb-3">Links</h1>
+          <a className="underline" href="https://github.com/joetrippier">
+            Github
+          </a>
+          <a className="underline" href="https://codepen.io/tripex99">
+            CodePen
+          </a>
         </section>
 
         <section className="w-screen flex flex-col justify-center items-center mb-8">
-          <h1 className="text-4xl m-1">Contact</h1>
-          <p className="m-1">If you want to get in touch about building something or just to say hi then drop me a message.</p>
+          <h1 className="text-4xl mb-3">Contact</h1>
+          <p className="m-1">
+            If you want to get in touch about building something or just to say
+            hi then drop me a message.
+          </p>
           <form className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96">
             <FormInput>
               <label>Name</label>
@@ -69,9 +79,8 @@ export const Head: HeadFC = () => {
   return (
     <>
       <html lang="en" />
-      <body className="text-gray-100 bg-gray-900 font-serif" />
+      <body className="text-gray-100 bg-slate-900 font-mono" />
       <title>Hello World</title>
     </>
-  )
-}
-
+  );
+};
