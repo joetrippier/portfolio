@@ -5,19 +5,36 @@ import Footer from "../components/footer";
 import logo from "../images/logo.png";
 import Button from "../components/button";
 import FormInput from "../components/formInput";
-import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Header></Header>
       <main className="">
-        <StaticImage
+        <div
+          className="w-screen h-screen absolute -z-50"
+          style={{
+            background: "linear-gradient(45deg, #0f172a, #4f474a)",
+            overflow: "hidden",
+          }}
+        >
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+          <Bar></Bar>
+        </div>
+        {/* <StaticImage
           className="w-screen h-screen absolute -z-50"
           src="../images/background.png"
           alt=""
           layout="fullWidth"
-        ></StaticImage>
+        ></StaticImage> */}
         <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
           <img
             className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
@@ -86,5 +103,26 @@ export const Head: HeadFC = () => {
       <body className="text-gray-100 bg-slate-900 font-mono" />
       <title>Joe Trippier</title>
     </>
+  );
+};
+
+const Bar = () => {
+  const horixontalChunks = [0, 20, 40, 60, 80];
+  const verticalChunks = [0, 20, 40, 60, 80];
+  const randx = Math.floor(Math.random() * horixontalChunks.length);
+  const randy = Math.floor(Math.random() * verticalChunks.length);
+  return (
+    <div
+      className="absolute -z-10"
+      style={{
+        background: "#0f172a",
+        width: "20%",
+        height: "calc(100vh/5)",
+        transform: `translate(${horixontalChunks[randx]}vw, ${verticalChunks[randy]}vh)`,
+        position: "absolute",
+        top: 0,
+        left: 0,
+      }}
+    ></div>
   );
 };
