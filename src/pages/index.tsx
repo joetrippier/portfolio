@@ -3,17 +3,21 @@ import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import logo from "../images/logo.png";
-import background from "../images/background.png";
 import Button from "../components/button";
 import FormInput from "../components/formInput";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-
       <Header></Header>
       <main className="">
-        <img src={background} className="w-screen h-screen absolute -z-50"></img>
+        <StaticImage
+          className="w-screen h-screen absolute -z-50"
+          src="../images/background.png"
+          alt=""
+          layout="fullWidth"
+        ></StaticImage>
         <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
           <img
             className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
