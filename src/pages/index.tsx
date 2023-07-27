@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps> = () => {
           className="w-screen h-screen absolute -z-50"
           src="../images/background.png"
           alt=""
-          layout="fixed"
+          layout="fullWidth"
         ></StaticImage>
         <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
           <img
