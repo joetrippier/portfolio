@@ -80,7 +80,7 @@ export const Head: HeadFC = () => {
     <>
       <html lang="en" />
       <body className="text-gray-100 bg-slate-900 font-mono" />
-      <title>Hello World</title>
+      <title>Joe Trippier</title>
     </>
   );
 };
