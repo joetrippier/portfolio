@@ -10,77 +10,85 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Header></Header>
-      <main className="">
-        <div
-          className="w-screen h-screen absolute -z-50"
-          style={{
-            background: "linear-gradient(45deg, #0f172a, #4f474a)",
-            overflow: "hidden",
-          }}
-        >
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-          <Bar></Bar>
-        </div>
-        {/* <StaticImage
-          className="w-screen h-screen absolute -z-50"
-          src="../images/background.png"
-          alt=""
-          layout="fullWidth"
-        ></StaticImage> */}
-        <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
-          <img
-            className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
-            src={logo}
-          />
-          <h1 className="text-4xl">Joe Trippier</h1>
-          <p>Fullstack software engineer based in the North West UK</p>
-        </section>
 
-        <section className="w-screen flex flex-col justify-center items-center mb-8">
+      <div
+        className="w-screen h-screen absolute -z-50"
+        style={{
+          background: "linear-gradient(45deg, #0f172a, #4f474a)",
+          overflow: "hidden",
+        }}
+      >
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+        <Bar></Bar>
+      </div>
+      <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
+        <img
+          className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
+          src={logo}
+        />
+        <h1 className="text-4xl">Joe Trippier</h1>
+        <p>Fullstack software engineer based in the North West UK</p>
+      </section>
+
+      <main className="container mx-auto">
+        <section className=" flex flex-col justify-center items-center text-center m-10 md:m-24">
           <h1 className="text-4xl mb-3">About</h1>
-          <p>Lorem ipsum</p>
+          <p>
+            Hi 👋, my name is Joe and I've been working with software for over
+            ten years. I like to work on front end and back end development and
+            have spent most of my time using C# and .Net to build websites. For
+            the frontend I like to use React, Vue, AngularJs and for a backend I
+            like to use .Net or Node.
+          </p>
         </section>
 
-        <section className="w-screen flex flex-col justify-center items-center mb-8">
+        <section className=" flex flex-col justify-center items-center text-center m-10 md:m-24">
           <h1 className="text-4xl mb-3">Links</h1>
+          <p className="mb-3">A list of helpful places to visit, so I can remember them</p>
           <a className="underline" href="https://github.com/joetrippier">
             Github
           </a>
           <a className="underline" href="https://codepen.io/tripex99">
             CodePen
           </a>
+          <a className="underline" href="https://www.canva.com/colors/color-wheel/">
+            Colour wheel
+          </a>
         </section>
 
-        <section className="w-screen flex flex-col justify-center items-center mb-8">
+        <section className="flex flex-col justify-center items-center text-center m-10 md:m-24">
           <h1 className="text-4xl mb-3">Contact</h1>
           <p className="m-1">
             If you want to get in touch about building something or just to say
             hi then drop me a message.
           </p>
-          <form className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96">
+          <form
+            noValidate={false}
+            className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96 text-left netlify"
+          >
             <FormInput>
-              <label>Name</label>
-              <input type="text" maxLength={100} />
+              <label>Your Name</label>
+              <input className="text-black" type="text" maxLength={100} required />
             </FormInput>
             <FormInput>
-              <label>Email</label>
-              <input type="email" />
+              <label>Your Email</label>
+              <input className="text-black" type="email" required />
             </FormInput>
             <FormInput>
               <label>Subject</label>
-              <input type="text" maxLength={100} />
+              <input className="text-black" type="text" maxLength={150} required />
             </FormInput>
             <FormInput>
               <label>Message</label>
-              <input type="text" maxLength={500} />
+              <textarea className="text-black" rows={5} maxLength={500} required />
             </FormInput>
 
             <FormInput>
