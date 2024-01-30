@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import { withPrefix, type HeadFC, type PageProps } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import logo from "../images/logo.png";
@@ -11,25 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Header></Header>
 
-      <div
-        className="w-screen h-screen absolute -z-50"
-        style={{
-          background: "linear-gradient(45deg, #0f172a, #4f474a)",
-          overflow: "hidden",
-        }}
-      >
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
-      </div>
-      <section className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
+      <section id="frame" className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
         <img
           className="w-20 h-20 rounded-full border-solid border-2 border-orange-700"
           src={logo}
@@ -52,14 +34,19 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <section className=" flex flex-col justify-center items-center text-center m-10 md:m-24">
           <h1 className="text-4xl mb-3">Links</h1>
-          <p className="mb-3">A list of helpful places to visit, so I can remember them</p>
+          <p className="mb-3">
+            A list of helpful places to visit, so I can remember them
+          </p>
           <a className="underline" href="https://github.com/joetrippier">
             Github
           </a>
           <a className="underline" href="https://codepen.io/tripex99">
             CodePen
           </a>
-          <a className="underline" href="https://www.canva.com/colors/color-wheel/">
+          <a
+            className="underline"
+            href="https://www.canva.com/colors/color-wheel/"
+          >
             Colour wheel
           </a>
         </section>
@@ -76,7 +63,12 @@ const IndexPage: React.FC<PageProps> = () => {
           >
             <FormInput>
               <label>Your Name</label>
-              <input className="text-black" type="text" maxLength={100} required />
+              <input
+                className="text-black"
+                type="text"
+                maxLength={100}
+                required
+              />
             </FormInput>
             <FormInput>
               <label>Your Email</label>
@@ -84,11 +76,21 @@ const IndexPage: React.FC<PageProps> = () => {
             </FormInput>
             <FormInput>
               <label>Subject</label>
-              <input className="text-black" type="text" maxLength={150} required />
+              <input
+                className="text-black"
+                type="text"
+                maxLength={150}
+                required
+              />
             </FormInput>
             <FormInput>
               <label>Message</label>
-              <textarea className="text-black" rows={5} maxLength={500} required />
+              <textarea
+                className="text-black"
+                rows={5}
+                maxLength={500}
+                required
+              />
             </FormInput>
 
             <FormInput>
@@ -98,6 +100,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
       </main>
       <Footer></Footer>
+      <script src={withPrefix('main.js')} type="text/javascript" />
     </>
   );
 };

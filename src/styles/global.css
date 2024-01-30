@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.block {
+  background-color: #1a236b;
+  position: absolute;
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+    inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
+  animation-duration: 2s;
+  transition-timing-function: ease-in;
+  animation-name: slidein;
+}
