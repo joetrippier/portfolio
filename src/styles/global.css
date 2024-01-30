@@ -11,3 +11,15 @@
   transition-timing-function: ease-in;
   animation-name: slidein;
 }
+
+
+@keyframes slidein {
+    from {
+      margin-top: -100%;
+    }
+  
+    to {
+      margin-top: 0%;
+    }
+  }
+  
