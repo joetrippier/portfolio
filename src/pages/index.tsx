@@ -13,7 +13,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
       <section id="frame" className="w-screen h-screen flex flex-col justify-center items-center text-center mb-6">
         <img
-          className=" z-50w-20 h-20 rounded-full border-solid border-2 border-orange-700"
+          className="z-50 w-20 h-20 rounded-full border-solid border-2 border-orange-700"
           src={logo}
         />
         <h1 className="text-4xl z-50">Joe Trippier</h1>
