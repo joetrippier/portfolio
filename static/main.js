@@ -46,8 +46,8 @@ function shuffleArray(array) {
           const translation = `translate(${columnPosition}vw, ${rowPosition}vh)`;
           //p.style.transform = translation;
   
-          p.style.left = `${columnPosition}vw`;
-          p.style.top = `${rowPosition}vh`;
+          p.style.left = `${columnPosition}%`;
+          p.style.top = `${rowPosition}%`;
           frameElem.append(p);
         }, (timer += delay));
       }
