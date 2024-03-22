@@ -11,13 +11,18 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Header></Header>
 
-      <section id="frame" className="w-full h-screen flex flex-col justify-center items-center text-center mb-6">
+      <section
+        id="frame"
+        className="w-full h-screen flex flex-col justify-center items-center text-center mb-6"
+      >
         <img
           className="z-50 w-20 h-20 rounded-full border-solid border-2 border-orange-700"
           src={logo}
         />
         <h1 className="text-4xl z-50">Joe Trippier</h1>
-        <p className="z-50">Fullstack software engineer based in the North West UK</p>
+        <p className="z-50">
+          Fullstack software engineer based in the North West UK
+        </p>
       </section>
 
       <main className="container mx-auto">
@@ -58,9 +63,12 @@ const IndexPage: React.FC<PageProps> = () => {
             hi then drop me a message.
           </p>
           <form
+            name="contact"
             noValidate={false}
-            className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96 text-left netlify"
+            className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96 text-left"
+            data-netlify="true"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <FormInput>
               <label>Your Name</label>
               <input
@@ -100,7 +108,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
       </main>
       <Footer></Footer>
-      <script src={withPrefix('main.js')} type="text/javascript" />
+      <script src={withPrefix("main.js")} type="text/javascript" />
     </>
   );
 };
