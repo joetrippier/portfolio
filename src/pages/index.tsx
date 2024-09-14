@@ -48,7 +48,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <section className=" flex flex-col justify-center items-center text-center m-10 md:m-24">
           <h1 className="text-4xl mb-3">About</h1>
           <p>
-            Hi 👋, my name is Joe and I've been working with software for over
+            Hi 👋, my name is Joe. I live just north of Manchester in the valley of Rossendale and I've been working with software for over
             ten years. I like to work on front end and back end development and
             have spent most of my time using C# and .Net to build websites. For
             the frontend I like to use React, Vue, AngularJs and for a backend I
@@ -90,10 +90,7 @@ const IndexPage: React.FC<PageProps> = () => {
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact" />
-            <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" onChange={handleChange} />
-            </label>
+
             <FormInput>
               <label>Your Name</label>
               <input
@@ -136,6 +133,13 @@ const IndexPage: React.FC<PageProps> = () => {
                 required
                 onChange={handleChange}
               />
+            </FormInput>
+
+            <FormInput>
+              <label>
+                Humans, don’t fill this out:{" "}
+                <input className="bg-slate-400" name="bot-field" onChange={handleChange} />
+              </label>
             </FormInput>
 
             <FormInput>
