@@ -13,17 +13,17 @@ const IndexPage: React.FC<PageProps> = () => {
   };
   const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
+
     const form = e.target;
+
+    const formData = new FormData(form);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
+      body: new URLSearchParams(formData as any).toString(),
     })
       .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error));
+      .catch((error) => console.error(error));
   };
 
   return (
