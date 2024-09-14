@@ -97,6 +97,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <FormInput>
               <label>Your Name</label>
               <input
+                name="name"
                 className="text-black"
                 type="text"
                 maxLength={100}
@@ -107,6 +108,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <FormInput>
               <label>Your Email</label>
               <input
+                name="email"
                 className="text-black"
                 type="email"
                 required
@@ -116,6 +118,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <FormInput>
               <label>Subject</label>
               <input
+                name="subject"
                 className="text-black"
                 type="text"
                 maxLength={150}
@@ -126,6 +129,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <FormInput>
               <label>Message</label>
               <textarea
+                name="message"
                 className="text-black"
                 rows={5}
                 maxLength={500}
