@@ -28,7 +28,7 @@ const ThanksPage: React.FC<PageProps> = () => {
     <main style={pageStyles}>
       <h1 style={headingStyles}>Thanks</h1>
       <p style={paragraphStyles}>
-        Thanks for submiting the form. (I know this page needs so work)
+        Thanks for submiting the form. (I know this page needs some work)
         <Link to="/">Go home</Link>.
       </p>
     </main>
