@@ -88,6 +88,7 @@ const IndexPage: React.FC<PageProps> = () => {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
+            action="thanks"
           >
             <input type="hidden" name="form-name" value="contact" />
 
@@ -165,12 +166,6 @@ export const Head: HeadFC = () => {
     </>
   );
 };
-
-function encode(data: any) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
 
 const Bar = () => {
   const horixontalChunks = [0, 20, 40, 60, 80];
