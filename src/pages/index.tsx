@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withPrefix, type HeadFC, type PageProps } from "gatsby";
+import { withPrefix, type HeadFC, type PageProps, navigate } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import logo from "../images/logo.png";
@@ -7,6 +7,25 @@ import Button from "../components/button";
 import FormInput from "../components/formInput";
 
 const IndexPage: React.FC<PageProps> = () => {
+  const [state, setState] = React.useState({});
+  const handleChange = (e: React.ChangeEvent<any>) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch((error) => alert(error));
+  };
+
   return (
     <>
       <Header></Header>
@@ -67,8 +86,14 @@ const IndexPage: React.FC<PageProps> = () => {
             noValidate={false}
             className="flex flex-col border-solid border-2 rounded border-orange-700 p-5 w-96 text-left"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact" />
+            <label>
+              Don’t fill this out:{" "}
+              <input name="bot-field" onChange={handleChange} />
+            </label>
             <FormInput>
               <label>Your Name</label>
               <input
@@ -76,11 +101,17 @@ const IndexPage: React.FC<PageProps> = () => {
                 type="text"
                 maxLength={100}
                 required
+                onChange={handleChange}
               />
             </FormInput>
             <FormInput>
               <label>Your Email</label>
-              <input className="text-black" type="email" required />
+              <input
+                className="text-black"
+                type="email"
+                required
+                onChange={handleChange}
+              />
             </FormInput>
             <FormInput>
               <label>Subject</label>
@@ -89,6 +120,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 type="text"
                 maxLength={150}
                 required
+                onChange={handleChange}
               />
             </FormInput>
             <FormInput>
@@ -98,6 +130,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 rows={5}
                 maxLength={500}
                 required
+                onChange={handleChange}
               />
             </FormInput>
 
@@ -124,6 +157,12 @@ export const Head: HeadFC = () => {
     </>
   );
 };
+
+function encode(data: any) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 const Bar = () => {
   const horixontalChunks = [0, 20, 40, 60, 80];
